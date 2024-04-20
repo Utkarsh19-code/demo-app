@@ -51,7 +51,7 @@ pipeline {
                           <p> Build is ${currentBuild.result}</p>
                        </body>
                     </html> ''',
-            to: 'ananda.yashaswi@quokkalabs.com',
+            to: 'ananda.yashaswi@quokkalabs.com','utkarsh19srvstv@gmail.com',
             from: 'utkarshsrvstv19@gmail.com',
             replyTo: 'utkarshsrvstv19@gmail.com',
             mimeType: 'text/html'
