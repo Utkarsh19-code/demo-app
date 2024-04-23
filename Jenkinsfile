@@ -2,7 +2,6 @@ pipeline {
     agent any
     environment {
         APP_NAME = "demo-app"
-        RELEASE = "1.0.0"
         DOCKER_USER = "utkarsh19"
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
     }
@@ -28,7 +27,7 @@ pipeline {
             steps{
                 script{
                     withCredentials([string(credentialsId: 'dockercred', variable: 'dockerpwd')]){
-                        sh 'docker login -u utkarsh19 -p ${dockerpwd}'
+                        sh 'docker login -u ${DOCKER_USER} -p ${dockerpwd}'
                         sh 'docker push ${IMAGE_NAME}'
                     }
                 }
